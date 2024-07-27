@@ -8,7 +8,7 @@ export const Header = () => {
 		<header className="flex flex-col gap-2 max-w-xl">
 			<div className="flex flex-col md:flex-row gap-4 items-center">
 				<div className="hidden md:flex border-[#35A2B1] border-2 pt-2 rounded-full overflow-hidden w-20 h-20 bg-[#1D1C20]">
-					<img src={avatar} width={200} height={200} />
+					<img src={avatar} width={1200} height={1200} />
 				</div>
 				<div className="flex md:hidden border-[#35A2B1] border-2 pt-2 rounded-full overflow-hidden w-28 h-28 bg-[#1D1C20]">
 					<img src={avatar} width={400} height={400} />
