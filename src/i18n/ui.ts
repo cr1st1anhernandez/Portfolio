@@ -36,7 +36,7 @@ export const ui = {
     technologiesTitle: "Technologies",
     projectsTitle: "Projects",
     project1Description:
-      "A website to learn linux being a beginner with a terminal simulator, commands and more.",
+      "A website to learn linux being a beginner with a terminal simulator.",
     project2Description:
       "A website to search for spotify artists and be able to observe all their metrics.",
     visitSite: "Visit site",
