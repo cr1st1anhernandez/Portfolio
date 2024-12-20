@@ -1,0 +1,44 @@
+---
+import LinuxLearner from "../assets/linuxLearner.png";
+import SpotifySearcher from "../assets/spotifySearcher.png";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { GitMergeIcon, NextJsIcon, ReactIcon, TailwindIcon } from "./Icons";
+import ProjectCard from "./ProjectCard.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const translate = useTranslations(lang);
+
+const projects = [
+  {
+    title: "Linux Learner",
+    description: translate("project1Description"),
+    image: LinuxLearner,
+    imageAlt: "Website to learn linux for beginners",
+    url: "https://linux-learner.vercel.app/",
+    icons: [NextJsIcon, TailwindIcon, ReactIcon, GitMergeIcon],
+  },
+  {
+    title: "Spotify Searcher",
+    description: translate("project2Description"),
+    image: SpotifySearcher,
+    imageAlt: "Website for search artists in spotify",
+    url: "https://spotify-searcher-artist.vercel.app/",
+    icons: [NextJsIcon, TailwindIcon, ReactIcon, GitMergeIcon],
+  },
+];
+---
+
+<div
+  class="text-lg bg-[#212024] flex flex-col gap-8 rounded-lg p-6 pb-12 lg:p-12 col-span-3 font-normal text-neutral-400 lg:pb-24"
+>
+  <h2 class="text-2xl lg:text-4xl pb-4 font-bold text-neutral-100">
+    {translate("projectsTitle")}
+  </h2>
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:grid-cols-3">
+    {
+      projects.map((project) => (
+        <ProjectCard {...project} visitSiteText={translate("visitSite")} />
+      ))
+    }
+  </section>
+</div>

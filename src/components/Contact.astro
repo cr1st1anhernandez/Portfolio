@@ -1,0 +1,27 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { ContactForm } from "./ContactForm";
+
+const lang = getLangFromUrl(Astro.url);
+const translate = useTranslations(lang);
+
+const translations = {
+  contactTitle: translate("contactTitle"),
+  nameLabel: translate("nameLabel"),
+  emailLabel: translate("emailLabel"),
+  messageLabel: translate("messageLabel"),
+  submitButton: translate("submitButton"),
+  emailRequired: translate("emailRequired"),
+  nameRequired: translate("nameRequired"),
+  messageRequired: translate("messageRequired"),
+  submitting: translate("submitting"),
+  sendError: translate("sendError"),
+  sendSuccess: translate("sendSuccess"),
+  maxLengthName: translate("maxLengthName"),
+  patternEmail: translate("patternEmail"),
+  maxLengthMessage: translate("maxLengthMessage"),
+  minLengthMessage: translate("minLengthMessage"),
+};
+---
+
+<ContactForm client:load translations={translations} />

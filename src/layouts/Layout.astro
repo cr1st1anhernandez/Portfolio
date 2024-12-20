@@ -1,25 +1,69 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Portfolio</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- SEO Meta Tags -->
+    <title>Java Backend Developer | Cristian NHR</title>
+    <meta
+      name="description"
+      content="Experienced Java backend developer specializing in Spring Boot, RESTful APIs, and enterprise software solutions. Skilled in full stack development with expertise in MySQL, React, and microservices architecture."
+    />
+
+    <!-- Open Graph / Social Media Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Java Backend Developer Portfolio" />
+    <meta
+      property="og:description"
+      content="Professional portfolio showcasing Java backend development skills and full stack project expertise"
+    />
+    <meta property="og:image" content="/portfolio-preview.jpg" />
+    <meta property="og:url" content="https://cristianhr.vercel.app/" />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Java Backend Developer Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Explore innovative Java backend and full stack development projects"
+    />
+    <meta name="twitter:image" content="/portfolio-preview.jpg" />
+
+    <!-- Additional SEO and Accessibility Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="keywords"
+      content="Java, Backend Developer, Spring Boot, RESTful API, Full Stack Developer, Software Engineer, MySQL, React"
+    />
+    <meta name="author" content="Cristian Neftali Hernandez Ramirez" />
+
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://cristianhr.vercel.app/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/icon.ico" />
+
+    <!-- Generator Tag -->
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Accessibility -->
+    <meta name="theme-color" content="#0f0f0f" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-		background-color: #0f0f0f;
-		color: #fff;
-		scroll-behavior: smooth;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100dvh;
+    background-color: #0f0f0f;
+    color: #fff;
+    scroll-behavior: smooth;
+  }
 </style>

@@ -1,0 +1,74 @@
+---
+import { Image } from "astro:assets";
+import avatar from "../assets/avatar.png";
+import { GithubIcon, LinkedinIcon } from "./Icons";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import LanguagePicker from "./LanguagePicker.astro";
+import { TextGenerateEffect } from "./TextGenerateEffect";
+
+const lang = getLangFromUrl(Astro.url);
+const translate = useTranslations(lang);
+---
+
+<header class="flex flex-col gap-2">
+  <div class="flex justify-between">
+    <div class="flex flex-col md:flex-row gap-4 items-center">
+      <div
+        class="hidden md:flex border-[#35A2B1] border-2 rounded-full overflow-hidden w-20 h-20 bg-[#212024]"
+      >
+        <Image
+          src={avatar}
+          alt="Draw character of developer"
+          width={1200}
+          height={1200}
+        />
+      </div>
+      <div
+        class="flex md:hidden border-[#35A2B1] border-2 pt-2 rounded-full overflow-hidden w-28 h-28 bg-[#212024]"
+      >
+        <Image
+          src={avatar}
+          alt="Draw character of developer"
+          width={1200}
+          height={1200}
+        />
+      </div>
+      <a
+        href="https://www.linkedin.com/in/cristian-neftali-hernandez-ramirez-b17742221/"
+        target="_blank"
+        class="cursor pointer inline-flex animate-shimmer items-center justify-center rounded-md border border-[#35A2B1] bg-[linear-gradient(110deg,#0a0f0d,45%,#0A2735,55%,#0a0f0d)] bg-[length:200%_100%] py-1 px-2 font-medium text-[#D2D4D7] transition-colors"
+      >
+        {translate("workStatus")}
+      </a>
+    </div>
+    <LanguagePicker />
+  </div>
+  <h1 class="text-4xl text-center md:text-left">
+    {translate("WelcomeMessage")}
+    <span class="text-[#35A2B1] font-extrabold"> Cristian.</span>
+  </h1>
+  <div class="text-center w-full md:text-left">
+    <TextGenerateEffect client:load words={translate("description")} />
+  </div>
+  <div
+    class="flex flex-row gap-4 items-center justify-center md:justify-normal"
+  >
+    <a
+      target="_blank"
+      href="https://www.linkedin.com/in/cristian-neftali-hernandez-ramirez-b17742221/"
+      rel="noopener noreferrer"
+      aria-label="LinkedIn Profile"
+    >
+      <LinkedinIcon width={25} height={25} color="#fff" />
+    </a>
+    <a
+      target="_blank"
+      href="https://github.com/cr1st1anhernandez/"
+      rel="noopener noreferrer"
+      aria-label="GitHub Profile"
+    >
+      <GithubIcon width={25} height={25} color="#fff" />
+    </a>
+  </div>
+</header>

@@ -1,0 +1,35 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import ExperienceCard from "./ExperienceCard.astro";
+import { FlipWords } from "./FlipWords";
+import Technologies from "./Technologies.astro";
+const words = ["Backend", "Springboot", "React", "Sql", "Java", "Nextjs"];
+
+const lang = getLangFromUrl(Astro.url);
+const translate = useTranslations(lang);
+---
+
+<div class="lg:grid lg:grid-cols-3 lg:grid-rows-2 flex flex-col gap-3">
+  <ExperienceCard />
+  <div
+    class="relative text-2xl lg:text-4xl flex flex-col gap-20 items-center justify-center row-span-1 bg-[#212024] rounded-lg p-6 lg:p-12 col-span-1 font-normal text-neutral-400"
+  >
+    <FlipWords client:load words={words} />
+  </div>
+  <div
+    class="text-lg bg-[#212024] rounded-lg p-6 lg:p-12 col-span-1 font-normal text-neutral-400"
+  >
+    <h2 class="text-2xl lg:text-4xl pb-4 font-bold text-neutral-100">
+      {translate("aboutMe")}
+    </h2>
+    <ul class="flex flex-col gap-2">
+      <li>{translate("aboutMeItem1")}</li>
+      <li>{translate("aboutMeItem2")}</li>
+      <li>{translate("aboutMeItem3")}</li>
+      <li>{translate("aboutMeItem4")}</li>
+      <li>{translate("aboutMeItem5")}</li>
+      <li>{translate("aboutMeItem6")}</li>
+    </ul>
+  </div>
+  <Technologies />
+</div>

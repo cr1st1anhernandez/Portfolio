@@ -1,0 +1,52 @@
+---
+import {
+  GitMergeIcon,
+  JavaIcon,
+  JavaScriptIcon,
+  MongoDbIcon,
+  MySqlIcon,
+  NextJsIcon,
+  ReactIcon,
+  SpringBootIcon,
+  TailwindIcon,
+  TypescriptIcon,
+} from "./Icons";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const translate = useTranslations(lang);
+
+const icons = [
+  { component: JavaScriptIcon, label: "Javascript" },
+  { component: ReactIcon, label: "React" },
+  { component: JavaIcon, label: "Java" },
+  { component: SpringBootIcon, label: "Spring Boot" },
+  { component: GitMergeIcon, label: "Git" },
+  { component: TypescriptIcon, label: "Typescript" },
+  { component: TailwindIcon, label: "Tailwind" },
+  { component: MongoDbIcon, label: "MongoDB" },
+  { component: MySqlIcon, label: "MySQL" },
+  { component: NextJsIcon, label: "NextJs" },
+];
+---
+
+<div
+  class="text-lg bg-[#212024] flex flex-col gap-8 rounded-lg p-6 lg:p-12 col-span-2 font-normal text-neutral-400"
+>
+  <h2 class="text-2xl lg:text-4xl pb-4 font-bold text-neutral-100">
+    {translate("technologiesTitle")}
+  </h2>
+  <ul
+    class="grid md:grid-cols-3 lg:grid-cols-5 grid-cols-2 grid-rows-2 gap-4 text-neutral-400"
+  >
+    {
+      icons.map((icon, index) => (
+        <li class="flex col-span-1 row-span-1 items-center justify-center flex-col">
+          <icon.component width={30} />
+          <span>{icon.label}</span>
+        </li>
+      ))
+    }
+  </ul>
+</div>
